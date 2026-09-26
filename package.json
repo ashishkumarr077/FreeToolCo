@@ -1,0 +1,33 @@
+{
+  "name": "freetoolco",
+  "version": "1.2.0",
+  "description": "FreeToolCo production-ready static website with 50+ browser-based tools and plugin architecture.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "syntax": "node --check src/js/app.js && node --check scripts/build.js && node --check scripts/tool-audit.js && node --check scripts/seo-audit.js",
+    "audit:seo": "node scripts/seo-audit.js",
+    "audit:tools": "node scripts/tool-audit.js",
+    "audit:content": "node scripts/content-quality-audit.js",
+    "verify:dist": "node scripts/verify-dist.js",
+    "test": "npm run syntax && npm run build && npm run verify:dist && npm run audit:tools && npm run audit:seo && npm run audit:content",
+    "guide": "python3 scripts/create-guide-pdf.py",
+    "package": "npm run test && python3 scripts/create-zip.py"
+  },
+  "keywords": [
+    "free-tools",
+    "pdf-tools",
+    "image-tools",
+    "calculators",
+    "browser-tools",
+    "seo"
+  ],
+  "author": "FreeToolCo",
+  "license": "MIT",
+  "dependencies": {
+    "jszip": "^3.10.2",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^5.5.207",
+    "qrcode-generator": "^2.0.4"
+  }
+}

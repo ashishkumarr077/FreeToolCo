@@ -1,0 +1,3 @@
+# FreeToolCo
+
+FreeToolCo is a privacy-first, browser-based toolbox with 72+ tools across PDF, image, and daily utility categories. Each tool has a static SEO page, structured data, related links, and a shared plugin architecture.
